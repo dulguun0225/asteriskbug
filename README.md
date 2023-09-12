@@ -1,15 +1,27 @@
-# asteriskbug
+# Nested/transitive dependency * asterisk version bug
 
-To install dependencies:
+### The `@types/react-transition-group` package has a dependency as
+```json
+"@types/react" : "*"
+```
+### This project has a dependency as
+```json
+"@types/react": "^16.9.56"
+```
+Also both overrides and resolutions as
+```json
+  "overrides": {
+    "@types/react": "^16.9.56"
+  },
+  "resolutions": {
+    "@types/react": "^16.9.56"
+  },
+```
 
+### After running 
 ```bash
 bun install
 ```
 
-To run:
+The `node_modules/react-transition-group/node_modules/@types/react` should not exist
 
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.0.0. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
