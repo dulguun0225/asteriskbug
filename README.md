@@ -23,5 +23,5 @@ Also both overrides and resolutions as
 bun install
 ```
 
-The `node_modules/react-transition-group/node_modules/@types/react` should not exist
+The `node_modules/@types/react-transition-group/node_modules/@types/react` should not exist
 
